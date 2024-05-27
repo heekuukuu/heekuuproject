@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f6bb9bf-6f9a-4c37-bc71-000006fdefb7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/WebContent/lib.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DatabaseConnector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ApiRequestUtil/WifiInfoFetcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ApiRequestUtil/WifiNearbyFinder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ApiRequestUtil/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/WifiInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/WifiInfoManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml.html" afterDir="false" />
-    </list>
+    <list default="true" id="5f6bb9bf-6f9a-4c37-bc71-000006fdefb7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
