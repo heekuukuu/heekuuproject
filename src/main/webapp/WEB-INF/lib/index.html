@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Example</title>
+    <style>
+        #wifiTable {
+           border-collapse: collapse;
+           width: 100%;
+       }
+       th, td {
+           border: 0.5px solid #fff; /* 테두리 색상을 흰색으로 지정 */
+           padding: 8px;
+           text-align: left;
+       }
+       th {
+           background-color: #3cb371; /* 헤더 배경색 지정 */
+       }
+        #menueTable th,
+        #menueTable td {
+           color: white;}
+
+       /* 하이퍼링크 간격을 조절하고 | 로 분리 */
+       #wifiTable a, #menueTable a {
+           margin-right: 5px; /* 각 링크 사이의 간격 조절 */
+
+           color: black; /* 링크의 색상을 검은색으로 지정 */
+       }
+
+       /* | 링크 스타일 */
+       .separator {
+           margin: 0 2px; /* |와 다음 링크 사이의 간격 조절 */
+           color: black; /* |의 색상을 검은색으로 지정 */
+       }
+    </style>
+</head>
+<body>
+<h1>와이파이 정보 구하기</h1>
+
+<table id="wifiTable" border="1">
+    <tr>
+        <td>
+            <a href="#">홈</a>
+            <span class="separator">|</span>
+        </td>
+        <td>
+            <a href="#">위치 히스토리 목록</a>
+            <span class="separator">|</span>
+        </td>
+        <td>
+            <a href="#">Open API 와이파이 정보 가져오기</a>
+        </td>
+    </tr>
+</table>
+
+<table id="gpsTable" border="1">
+    <tr>
+
+        <td>LAT:
+
+
+        </td>
+        <td>,LNT:
+
+        </td>
+    </tr>
+</table>
+
+<table id="menueTable" >
+
+    <tr>
+        <th>거리(Km)</th>
+        <th>관리번호</th>
+        <th>자치구</th>
+        <th>와이파이명</th>
+        <th>도로명주소</th>
+        <th>설치위치(층)</th>
+        <th>설치유형</th>
+        <th>설치기관</th>
+        <th>서비스구분</th>
+        <th>망종류</th>
+        <th>설치년도</th>
+        <th>실내외구분</th>
+        <th>WIFI접속환경</th>
+        <th>X좌표</th>
+        <th>Y좌표</th>
+        <th>작업일자</th>
+    </tr>
+
+    <tbody id="wifiData">
+    <!-- 여기에 데이터베이스에서 가져온 정보를 반복해서 삽입합니다. -->
+    </tbody>
+</table>
+
+<script>
+    // 페이지 로드 시 데이터베이스에서 정보를 가져와 표시하는 함수
+    function loadDataFromDatabase() {
+        fetch('/wifiInfo')
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.getElementById('wifiData');
+                tableBody.innerHTML = '';
+                data.forEach(wifi => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${wifi.distance}</td>
+                        <td>${wifi.managerNumber}</td>
+                        <td>${wifi.district}</td>
+                        <td>${wifi.wifiName}</td>
+                        <td>${wifi.address}</td>
+                        <td>${wifi.installLocation}</td>
+                        <td>${wifi.installType}</td>
+                        <td>${wifi.installAgency}</td>
+                        <td>${wifi.serviceType}</td>
+                        <td>${wifi.networkType}</td>
+                        <td>${wifi.installYear}</td>
+                        <td>${wifi.indoorOutdoor}</td>
+                        <td>${wifi.wifiEnvironment}</td>
+                        <td>${wifi.xCoordinate}</td>
+                        <td>${wifi.yCoordinate}</td>
+                        <td>${wifi.workDate}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error fetching wifi data:', error));
+    }
+
+    // 페이지 로드 시 데이터베이스 정보를 가져오도록 호출
+    window.onload = loadDataFromDatabase;
+</script>
+</body>
+</html>
