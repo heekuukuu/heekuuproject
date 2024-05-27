@@ -31,24 +31,7 @@ public class WifiInfoServlet extends HttpServlet {
              ResultSet rs = stmt.executeQuery("SELECT * FROM wifi_info")) {
 
             while (rs.next()) {
-                WifiInfo wifiInfo = new WifiInfo();
-                wifiInfo.setDistance(rs.getDouble("distance"));
-                wifiInfo.setManagerNumber(rs.getString("manager_number"));
-                wifiInfo.setDistrict(rs.getString("district"));
-                wifiInfo.setWifiName(rs.getString("wifi_name"));
-                wifiInfo.setAddress(rs.getString("address"));
-                wifiInfo.setInstallLocation(rs.getString("install_location"));
-                wifiInfo.setInstallType(rs.getString("install_type"));
-                wifiInfo.setInstallAgency(rs.getString("install_agency"));
-                wifiInfo.setServiceType(rs.getString("service_type"));
-                wifiInfo.setNetworkType(rs.getString("network_type"));
-                wifiInfo.setInstallYear(rs.getInt("install_year"));
-                wifiInfo.setIndoorOutdoor(rs.getString("indoor_outdoor"));
-                wifiInfo.setWifiEnvironment(rs.getString("wifi_environment"));
-                wifiInfo.setXCoordinate(rs.getDouble("x_coordinate"));
-                wifiInfo.setYCoordinate(rs.getDouble("y_coordinate"));
-                wifiInfo.setWorkDate(rs.getString("work_date"));
-                wifiInfoList.add(wifiInfo);
+               c
             }
         } catch (Exception e) {
             e.printStackTrace();
