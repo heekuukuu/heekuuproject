@@ -1,0 +1,28 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Tomcat" type="com.poratu.idea.plugins.tomcat" singleton="false">
+    <log_file alias="Tomcat Catalina Log" path="$USER_HOME$/.SmartTomcat/heekuuproject/heekuuproject/logs/catalina.*" />
+    <log_file alias="Tomcat Manager Log" path="$USER_HOME$/.SmartTomcat/heekuuproject/heekuuproject/logs/manager.*" />
+    <log_file alias="Tomcat Host Manager Log" path="$USER_HOME$/.SmartTomcat/heekuuproject/heekuuproject/logs/host-manager.*" />
+    <log_file alias="Tomcat Localhost Log" path="$PROJECT_DIR$/apache-tomcat-8.5.100/logs/localhost.*" />
+    <log_file alias="Tomcat Access Log" path="$PROJECT_DIR$/apache-tomcat-8.5.100/logs/localhost_access_log.*" />
+    <option name="catalinaBase" value="$PROJECT_DIR$/apache-tomcat-8.5.100" />
+    <option name="contextPath" value="/" />
+    <option name="docBase" value="$PROJECT_DIR$/apache-tomcat-8.5.100" />
+    <option name="envOptions">
+      <map />
+    </option>
+    <option name="extraClassPath" value="" />
+    <option name="tomcatInfo">
+      <TomcatInfo>
+        <option name="name" value="Apache Tomcat/8.5.100" />
+        <option name="path" value="$PROJECT_DIR$/src/apache-tomcat-8.5.100" />
+        <option name="version" value="8.5.100.0" />
+      </TomcatInfo>
+    </option>
+    <option name="vmOptions" value="" />
+    <module name="wifi-service" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

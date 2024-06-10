@@ -4,47 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f6bb9bf-6f9a-4c37-bc71-000006fdefb7" name="Changes" comment="Save changes before pulling">
-      <changelist_data name="이희경" email="leeheekyung@ihuigyeongs-macbook-pro.local" />
-      <change afterPath="$PROJECT_DIR$/apache-tomcat-8.5.100/webapps/wifi-service-1.0-SNAPSHOT.war" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/WifiService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/bookmark_details.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/bookmarks.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/bookmarksList.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/history.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/modify.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/success.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.100/conf/catalina.policy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.100/conf/catalina.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.100/conf/context.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.100/conf/jaspic-providers.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.100/conf/jaspic-providers.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.100/conf/logging.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.100/conf/server.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.100/conf/tomcat-users.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.100/conf/tomcat-users.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.100/conf/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/sqlite-jdbc-3.45.3.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mydatabase.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/db/mydatabase.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DatabaseConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/util/DatabaseConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ApiRequestUtil/WifiInfoFetcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/WifiInfoFetcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ApiRequestUtil/WifiNearbyFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/WifiNearbyFinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ApiRequestUtil/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/script/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Servlet/WifiInfoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/WifiServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Servlet/wifi_info.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wifi_info.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/WifiInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/WifiInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/WifiInfoManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/WifiInfoManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-    </list>
+    <list default="true" id="5f6bb9bf-6f9a-4c37-bc71-000006fdefb7" name="Changes" comment="Save changes before pulling" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,6 +22,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="이희경 &lt;leeheekyung@ihuigyeongs-macbook-pro.local&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -102,35 +67,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ApiRequestUtil (1).executor": "Run",
-    "Application.ApiRequestUtil.executor": "Run",
-    "Application.Main.executor": "Debug",
-    "Application.WifiInfoFetcher.executor": "Run",
-    "Application.WifiNearbyFinder.executor": "Run",
-    "Application.org.example.ApiRequestUtil.WifiInfoFetcher.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Notification.DisplayName-DoNotAsk-Execution": "External process execution failed",
-    "Notification.DoNotAsk-Execution": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Smart Tomcat.Tomcat.executor": "Run",
-    "Smart Tomcat.Tomcat: heekuuproject.executor": "Run",
-    "Smart Tomcat.Unnamed.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/leeheekyung/Downloads/Javaproject/heekuuproject/src/main/webapp/WEB-INF/lib",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.33448276",
-    "settings.editor.selected.configurable": "project.propCompiler"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ApiRequestUtil (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.ApiRequestUtil.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.WifiInfoFetcher.executor&quot;: &quot;Run&quot;,
+    &quot;Application.WifiNearbyFinder.executor&quot;: &quot;Run&quot;,
+    &quot;Application.org.example.ApiRequestUtil.WifiInfoFetcher.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-Execution&quot;: &quot;External process execution failed&quot;,
+    &quot;Notification.DoNotAsk-Execution&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Smart Tomcat.Tomcat.executor&quot;: &quot;Run&quot;,
+    &quot;Smart Tomcat.Tomcat: heekuuproject.executor&quot;: &quot;Run&quot;,
+    &quot;Smart Tomcat.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/leeheekyung/Downloads/Javaproject/heekuuproject/src/main/webapp/WEB-INF/lib&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.33448276&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ApiRequestUtil.servlet" />
@@ -268,6 +233,15 @@
       <option name="presentableId" value="Default" />
       <updated>1716544025074</updated>
     </task>
+    <task id="LOCAL-00001" summary="Save changes before pulling">
+      <option name="closed" value="true" />
+      <created>1718017822998</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1718017822998</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="UnknownFeatures">
