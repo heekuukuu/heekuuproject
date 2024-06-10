@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성공 페이지</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .message {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<div class="message" id="message"></div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const count = urlParams.get('count');
+        const messageElement = document.getElementById('message');
+
+        if (count) {
+            messageElement.textContent = `총 ${count}개의 와이파이 정보를 가져왔습니다.`;
+        } else {
+            messageElement.textContent = '와이파이 정보를 가져오는 데 실패했습니다.';
+        }
+    });
+</script>
+</body>
+</html>

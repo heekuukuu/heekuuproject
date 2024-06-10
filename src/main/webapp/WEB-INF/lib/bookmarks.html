@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>북마크 추가</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: left;
+            color: black;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #aaa;
+            text-align: left;
+        }
+        th {
+            background-color: #3cb371;
+            color: white;
+            text-align: center;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(odd) {
+            background-color: #fff;
+        }
+         .button-link:hover {
+            background-color: #f2f2f2;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>북마크 추가</h1>
+
+<nav>
+    <a href="index.html">홈</a><span class="separator">|</span>
+    <a href="bookmarksList.html">위치 히스토리 목록</a><span class="separator">|</span>
+    <a href="#">Open API 와이파이 정보 가져오기</a><span class="separator">|</span>
+    <a href="history.html">즐겨 찾기 보기</a><span class="separator">|</span>
+    <a href="history.html">즐겨 찾기 그룹 관리</a>
+</nav>
+
+<table>
+    <tr>
+        <th>북마크 이름</th>
+        <td><input type="text" id="bookmarkName" placeholder=""></td>
+    </tr>
+    <tr>
+        <th>순서</th>
+        <td><input type="number" id="order" placeholder=""></td>
+    </tr>
+    <tr>
+        <td colspan="2" style="text-align: center;"><button onclick="addBookmark()">추가</button></td>
+    </tr>
+</table>
+
+<script>
+    function addBookmark() {
+        const bookmarkName = document.getElementById('bookmarkName').value;
+        const order = document.getElementById('order').value;
+
+        if (bookmarkName.trim() === "" || order.trim() === "") {
+            alert("모든 필드를 입력해주세요.");
+            return;
+        }
+
+        const today = new Date().toISOString().replace('T', ' ').slice(0, 19);
+
+        const bookmark = {
+            id: Date.now().toString(),
+            name: bookmarkName,
+            order: order,
+            createDate: today,
+            modifyDate: today
+        };
+
+        saveBookmark(bookmark);
+        alert("북마크 그룹 정보를 추가하였습니다.");
+        window.location.href = "history.html";
+    }
+
+    function saveBookmark(bookmark) {
+        let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+        bookmarks.push(bookmark);
+        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>와이파이 정보 구하기</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: left;
+            color: black;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #aaa;
+            text-align: left;
+        }
+        th {
+            background-color: #3cb371;
+            color: white;
+            text-align: center;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(odd) {
+            background-color: #fff;
+        }
+        . .button-link {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            font-size: 16px;
+            color: white;
+            background-color: #3cb371;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+        }
+        .button-link:hover {
+            background-color: #f2f2f2;
+        }
+            .info-message {
+            text-align: center;
+            color: black;
+            margin-top: 20px;
+            font-weight: normal; /* 글씨체 굵기 해제 */
+        }
+    </style>
+</head>
+<body>
+
+<h1>위치 히스토리 목록</h1>
+
+<nav>
+    <a href="index.html">홈</a><span class="separator">|</span>
+    <a href="bookmarksList.html">위치 히스토리 목록</a><span class="separator">|</span>
+    <a href="#">Open API 와이파이 정보 가져오기</a><span class="separator">|</span>
+    <a href="history.html">즐겨 찾기 보기</a><span class="separator">|</span>
+    <a href="history.html">즐겨 찾기 그룹 관리</a>
+</nav>
+
+<button class="button-link" onclick="location.href='bookmarks.html'">북마크 그룹 이름 추가</button>
+
+<table>
+
+
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>북마크 이름</th>
+        <th>순서</th>
+        <th>등록일자</th>
+        <th>수정일자</th>
+        <th>비고</th>
+    </tr>
+    </thead>
+
+
+    <tbody id="bookmarkList">
+    <!-- 북마크 목록이 여기에 추가됩니다 -->
+    </tbody>
+</table>
+<div id="noDataMessage" class="info-message" style="display:none;">
+    정보가 존재하지 않습니다.
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', loadBookmarks);
+
+    function loadBookmarks() {
+        let bookmarks =
+        JSON.parse(localStorage.getItem('bookmarks')) || [];
+       const tableBody = document.getElementById('bookmarkList');
+        const noDataMessage = document.getElementById('noDataMessage');
+
+        if (bookmarks.length === 0) {
+            noDataMessage.style.display = 'block';
+        } else {
+            noDataMessage.style.display = 'none';
+            bookmarks.forEach(displayBookmark);
+        }
+    }
+
+    function displayBookmark(bookmark) {
+        const tableBody = document.getElementById('bookmarkList');
+        const newRow = document.createElement('tr');
+
+        const idCell = document.createElement('td');
+        idCell.textContent = bookmark.id;
+        newRow.appendChild(idCell);
+
+        const nameCell = document.createElement('td');
+        nameCell.textContent = bookmark.name;
+        newRow.appendChild(nameCell);
+
+        const orderCell = document.createElement('td');
+        orderCell.textContent = bookmark.order;
+        newRow.appendChild(orderCell);
+
+        const createDateCell = document.createElement('td');
+        createDateCell.textContent = bookmark.createDate;
+        newRow.appendChild(createDateCell);
+
+        const modifyDateCell = document.createElement('td');
+        modifyDateCell.textContent = bookmark.modifyDate;
+        newRow.appendChild(modifyDateCell);
+
+        const actionCell = document.createElement('td');
+        actionCell.innerHTML = `<a href="modify.html?id=${bookmark.id}" class="button-link">수정</a>
+                                <a href="delete.html?id=${bookmark.id}" class="button-link">삭제</a>`;
+        newRow.appendChild(actionCell);
+
+        tableBody.appendChild(newRow);
+    }
+
+    function addToBookmark() {
+        const select = document.getElementById('options');
+        const bookmarkId = select.value;
+
+        if (!bookmarkId) {
+            window.location.href = "bookmarks.html";
+            return;
+        }
+
+        let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+        let bookmark = bookmarks.find(b => b.id === bookmarkId);
+
+        if (bookmark) {
+            const urlParams = new URLSearchParams(window.location.search);
+            const mgrNo = urlParams.get('mgrNo');
+
+            if (mgrNo) {
+                // 새로운 즐겨찾기 값을 북마크 정보에 추가
+                if (!bookmark.favorites) {
+                    bookmark.favorites = [];
+                }
+                bookmark.favorites.push(mgrNo);
+                localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+                window.location.reload();
+            }
+        } else {
+            // 북마크가 존재하지 않는 경우를 처리
+            console.error("북마크를 찾을 수 없습니다");
+        }
+    }
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>북마크 삭제</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: left;
+            color: black;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #aaa;
+        }
+        th {
+            background-color: #3cb371;
+            color: white;
+            text-align: center;
+        }
+        .action-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .separator {
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>위치 히스토리 목록</h1>
+
+<div>
+    <a href="index.html">홈</a><span class="separator">|</span>
+    <a href="history.html">위치 히스토리 목록</a><span class="separator">|</span>
+    <a href="#">Open API 와이파이 정보 가져오기</a><span class="separator">|</span>
+    <a href="history.html">즐겨 찾기 보기</a><span class="separator">|</span>
+    <a href="history.html">즐겨 찾기 그룹 관리</a>
+</div>
+
+<p>북마크를 삭제하시겠습니까?</p>
+
+<table>
+    <tbody id="bookmarkDetails">
+    </tbody>
+</table>
+
+<div class="action-buttons">
+    <a href="bookmarksList.html">돌아가기</a> <button onclick="deleteFavorite()">삭제</button>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', loadBookmarkDetails);
+
+    function loadBookmarkDetails() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookmarkId = urlParams.get('id');
+        const mgrNo = urlParams.get('mgrNo');
+        let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+        let bookmark = bookmarks.find(b => b.id === bookmarkId);
+
+        if (bookmark) {
+            const favorite = bookmark.favorites.find(fav => fav.mgrNo === mgrNo);
+            if (favorite) {
+                const bookmarkDetails = document.getElementById('bookmarkDetails');
+
+                const bookmarkNameRow = document.createElement('tr');
+                const bookmarkNameCell1 = document.createElement('th');
+                bookmarkNameCell1.textContent = '북마크 이름';
+                const bookmarkNameCell2 = document.createElement('td');
+                bookmarkNameCell2.textContent = bookmark.name;
+                bookmarkNameRow.appendChild(bookmarkNameCell1);
+                bookmarkNameRow.appendChild(bookmarkNameCell2);
+                bookmarkDetails.appendChild(bookmarkNameRow);
+
+                const wifiNameRow = document.createElement('tr');
+                const wifiNameCell1 = document.createElement('th');
+                wifiNameCell1.textContent = '와이파이명';
+                const wifiNameCell2 = document.createElement('td');
+                wifiNameCell2.textContent = favorite.wifiName;
+                wifiNameRow.appendChild(wifiNameCell1);
+                wifiNameRow.appendChild(wifiNameCell2);
+                bookmarkDetails.appendChild(wifiNameRow);
+
+                const dateRow = document.createElement('tr');
+                const dateCell1 = document.createElement('th');
+                dateCell1.textContent = '등록일자';
+                const dateCell2 = document.createElement('td');
+                dateCell2.textContent = bookmark.createDate || 'N/A';
+                dateRow.appendChild(dateCell1);
+                dateRow.appendChild(dateCell2);
+                bookmarkDetails.appendChild(dateRow);
+            }
+        }
+    }
+
+    function deleteFavorite() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookmarkId = urlParams.get('id');
+        const mgrNo = urlParams.get('mgrNo');
+        let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+
+        let bookmark = bookmarks.find(b => b.id === bookmarkId);
+        if (bookmark) {
+            bookmark.favorites = bookmark.favorites.filter(fav => fav.mgrNo !== mgrNo);
+            localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+            alert('북마크 정보를 삭제하였습니다.');
+            window.location.href = "bookmarksList.html";
+        }
+    }
+</script>
+
+</body>
+</html>

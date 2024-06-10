@@ -1,80 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Location Example</title>
+    <title>와이파이 정보 구하기</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: left;
+            color: black;
+            margin-bottom: 20px;
+        }
         #wifiTable {
-           border-collapse: collapse;
-           width: 100%;
-       }
-       th, td {
-           border: 0.5px solid #fff; /* 테두리 색상을 흰색으로 지정 */
-           padding: 8px;
-           text-align: left;
-       }
-       th {
-           background-color: #3cb371; /* 헤더 배경색 지정 */
-       }
-        #menueTable th,
-        #menueTable td {
-           color: white;}
-
-       /* 하이퍼링크 간격을 조절하고 | 로 분리 */
-       #wifiTable a, #menueTable a {
-           margin-right: 5px; /* 각 링크 사이의 간격 조절 */
-
-           color: black; /* 링크의 색상을 검은색으로 지정 */
-       }
-
-       /* | 링크 스타일 */
-       .separator {
-           margin: 0 2px; /* |와 다음 링크 사이의 간격 조절 */
-           color: black; /* |의 색상을 검은색으로 지정 */
-       }
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        #menuTable {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #3cb371;
+            color: white;
+        }
+        #menuTable th, #menuTable td {
+            border: 1px solid #aaa; /* 회색 테두리 */
+        }
+        #wifiTable td {
+            border: 1px solid #ddd; /* 회색 테두리 */
+        }
+        #gpsTable {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 5px;
+        }
+        #gpsTable input, #gpsTable button {
+            border: 1px solid #ddd;
+            padding: 5px;
+        }
+        #wifiTable a {
+            margin-right: 2px; /* 링크 간격 줄이기 */
+            color: black;
+        }
+        .separator {
+            margin: 0 2px; /* | 간격 줄이기 */
+            color: black;
+        }
+        .error-message {
+            color: red;
+            text-align: center;
+        }
+        .info-message {
+            text-align: center;
+            padding: 8px;
+            border: 1px solid #aaa; /* 회색 테두리 */
+        }
+        .center {
+            text-align: center;
+        }
+        .loading-spinner {
+            border: 16px solid #f3f3f3; /* Light grey */
+            border-top: 16px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+            display: none;
+            margin: auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(odd) {
+            background-color: #fff;
+        }
+         .button-link:hover {
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
 <body>
 <h1>와이파이 정보 구하기</h1>
 
-<table id="wifiTable" border="1">
-    <tr>
-        <td>
-            <a href="#">홈</a>
-            <span class="separator">|</span>
-        </td>
-        <td>
-            <a href="#">위치 히스토리 목록</a>
-            <span class="separator">|</span>
-        </td>
-        <td>
-            <a href="#">Open API 와이파이 정보 가져오기</a>
-        </td>
-    </tr>
+<div>
+    <a href="index.html">홈</a><span class="separator">|</span>
+    <a href="bookmarksList.html">위치 히스토리 목록</a><span class="separator">|</span>
+    <a href="#" id="update-wifi">Open API 와이파이 정보 가져오기</a><span class="separator">|</span>
+    <a href="history.html">즐겨 찾기 보기</a><span class="separator">|</span>
+    <a href="history.html">즐겨 찾기 그룹 관리</a>
+</div>
+
+    <table id="gpsTable">
+        <tr>
+            LAT:<input type="text" id="lat" placeholder="위도" value="0.0">
+            ,LNT:<input type="text" id="lnt" placeholder="경도" value="0.0">
+            <button onclick="getLocation()">내 위치 가져오기</button>
+            <button onclick="fetchWifiInfo()">근처 WIFI 정보 보기</button>
+        </tr>
+
 </table>
+    <br>
+<div id="error-message" class="error-message"></div>
+<div class="loading-spinner" id="loading-spinner"></div>
 
-<table id="gpsTable" border="1">
-    <tr>
+<table id="menuTable">
+    <thead>
 
-        <td>LAT:
-
-
-        </td>
-        <td>,LNT:
-
-        </td>
-    </tr>
-</table>
-
-<table id="menueTable" >
-
-    <tr>
         <th>거리(Km)</th>
         <th>관리번호</th>
         <th>자치구</th>
         <th>와이파이명</th>
         <th>도로명주소</th>
+        <th>상세주소</th>
         <th>설치위치(층)</th>
         <th>설치유형</th>
         <th>설치기관</th>
@@ -87,48 +135,173 @@
         <th>Y좌표</th>
         <th>작업일자</th>
     </tr>
-
-    <tbody id="wifiData">
-    <!-- 여기에 데이터베이스에서 가져온 정보를 반복해서 삽입합니다. -->
-    </tbody>
+    </thead>
+    <tbody id="wifiData"></tbody>
 </table>
 
+<div class="info-message">
+    <br>위치 정보를 입력한 후에 조회해 주세요.
+    <br><br>
+</div>
+
 <script>
-    // 페이지 로드 시 데이터베이스에서 정보를 가져와 표시하는 함수
-    function loadDataFromDatabase() {
-        fetch('/wifiInfo')
-            .then(response => response.json())
-            .then(data => {
-                const tableBody = document.getElementById('wifiData');
-                tableBody.innerHTML = '';
-                data.forEach(wifi => {
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
-                        <td>${wifi.distance}</td>
-                        <td>${wifi.managerNumber}</td>
-                        <td>${wifi.district}</td>
-                        <td>${wifi.wifiName}</td>
-                        <td>${wifi.address}</td>
-                        <td>${wifi.installLocation}</td>
-                        <td>${wifi.installType}</td>
-                        <td>${wifi.installAgency}</td>
-                        <td>${wifi.serviceType}</td>
-                        <td>${wifi.networkType}</td>
-                        <td>${wifi.installYear}</td>
-                        <td>${wifi.indoorOutdoor}</td>
-                        <td>${wifi.wifiEnvironment}</td>
-                        <td>${wifi.xCoordinate}</td>
-                        <td>${wifi.yCoordinate}</td>
-                        <td>${wifi.workDate}</td>
-                    `;
-                    tableBody.appendChild(row);
-                });
-            })
-            .catch(error => console.error('Error fetching wifi data:', error));
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById('update-wifi').addEventListener('click', fetchWifiInfo);
+    });
+
+    function getLocation() {
+        const errorMessage = document.getElementById('error-message');
+        errorMessage.textContent = ''; // 이전 에러 메시지를 지우기
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                const lat = position.coords.latitude;
+                const lnt = position.coords.longitude;
+                document.getElementById('lat').value = lat;
+                document.getElementById('lnt').value = lnt;
+            }, (error) => {
+                errorMessage.textContent = '위치를 가져오는데 실패했습니다. 브라우저 설정을 확인해 주세요.';
+                console.error('위치 정보를 가져오는 중 오류 발생:', error);
+            });
+        } else {
+            errorMessage.textContent = 'Geolocation은 이 브라우저에서 지원되지 않습니다.';
+        }
+    }
+async function fetchNearbyWifi() {
+    const lat = parseFloat(document.getElementById('lat').value);
+    const lnt = parseFloat(document.getElementById('lnt').value);
+    const errorMessage = document.getElementById('error-message');
+    const loadingMessage = document.getElementById('loading-message');
+    loadingMessage.textContent = '데이터를 가져오는 중입니다...';
+    errorMessage.textContent = '';
+
+    try {
+       let totalData = [];
+        let start = 1;
+        let end = 1000;
+        const step = 1000;
+        let dataAvailable = true;
+
+        while (dataAvailable) {
+            const response = await fetch(`http://openapi.seoul.go.kr:8088/747a584b6f6a6130383057694a6d6f/json/TbPublicWifiInfo/${start}/${end}/`);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+
+            if (data.TbPublicWifiInfo.row && data.TbPublicWifiInfo.row.length > 0) {
+                totalData = totalData.concat(data.TbPublicWifiInfo.row);
+                start += step;
+                end += step;
+            } else {
+                dataAvailable = false;
+            }
+        }
+
+        await saveWifiData(totalData);
+
+        window.location.href = 'success.html?count=' + totalData.length;
+    } catch (error) {
+        console.error('와이파이 데이터를 가져오는 중 오류 발생:', error);
+        errorMessage.textContent = '와이파이 정보를 가져오는 데 실패했습니다. 다시 시도해 주세요.';
+        loadingMessage.textContent = '';
+    }
+}
+    async function fetchWifiInfo() {
+        const lat = parseFloat(document.getElementById('lat').value);
+        const lnt = parseFloat(document.getElementById('lnt').value);
+        const errorMessage = document.getElementById('error-message');
+        const loadingSpinner = document.getElementById('loading-spinner');
+
+        // 이전 에러 메시지를 지우기
+        errorMessage.textContent = '';
+        loadingSpinner.style.display = 'block';
+
+        try {
+            const response = await fetch('http://openapi.seoul.go.kr:8088/747a584b6f6a6130383057694a6d6f/json/TbPublicWifiInfo/1/1000/');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            const filteredData = filterWifiData(data.TbPublicWifiInfo.row, lat, lnt);
+            displayWifiData(filteredData);
+
+            // 데이터를 서버로 전송하여 SQLite에 저장
+            await saveWifiData(filteredData);
+            loadingSpinner.style.display = 'none';
+        } catch (error) {
+            console.error('와이파이 데이터를 가져오는 중 오류 발생:', error);
+            errorMessage.textContent = '와이파이 정보를 가져오는 데 실패했습니다. 다시 시도해 주세요.';
+            loadingSpinner.style.display = 'none';
+        }
     }
 
-    // 페이지 로드 시 데이터베이스 정보를 가져오도록 호출
-    window.onload = loadDataFromDatabase;
+    function filterWifiData(data, lat, lnt) {
+        return data.map(wifi => {
+            wifi.distance = calculateDistance(lat, lnt, parseFloat(wifi.LAT), parseFloat(wifi.LNT));
+            return wifi;
+        }).sort((a, b) => a.distance - b.distance).slice(0, 20);
+    }
+
+    function calculateDistance(lat1, lon1, lat2, lon2) {
+        const R = 6371; // 지구 반경 (킬로미터)
+        const dLat = (lat2 - lat1) * Math.PI / 180;
+        const dLon = (lon2 - lon1) * Math.PI / 180;
+        const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                  Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                  Math.sin(dLon / 2) * Math.sin(dLon / 2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        return R * c; // 거리 (킬로미터)
+    }
+
+       function displayWifiData(data) {
+        const tableBody = document.getElementById('wifiData');
+        tableBody.innerHTML = '';
+        data.forEach(wifi => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${wifi.distance.toFixed(2)}</td>
+                <td>${wifi.X_SWIFI_MGR_NO}</td>
+                <td>${wifi.X_SWIFI_WRDOFC}</td>
+                <td><a href="detail.html?mgrNo=${wifi.X_SWIFI_MGR_NO}">${wifi.X_SWIFI_MAIN_NM}</a></td>
+                <td>${wifi.X_SWIFI_ADRES1}</td>
+                <td>${wifi.X_SWIFI_ADRES2}</td>
+                <td>${wifi.X_SWIFI_INSTL_FLOOR}</td>
+                <td>${wifi.X_SWIFI_INSTL_TY}</td>
+                <td>${wifi.X_SWIFI_INSTL_MBY}</td>
+                <td>${wifi.X_SWIFI_SVC_SE}</td>
+                <td>${wifi.X_SWIFI_CMCWR}</td>
+                <td>${wifi.X_SWIFI_CNSTC_YEAR}</td>
+                <td>${wifi.X_SWIFI_INOUT_DOOR}</td>
+                <td>${wifi.X_SWIFI_REMARS3}</td>
+                <td>${wifi.LAT}</td>
+                <td>${wifi.LNT}</td>
+                <td>${wifi.WORK_DTTM}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+    }
+
+   async function saveWifiData(data) {
+    try {
+        const response = await fetch('/save-wifi-data', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const result = await response.json();
+        console.log('Data saved successfully:', result);
+    } catch (error) {
+        console.error('Error saving wifi data:', error);
+    }
+}
+
+
 </script>
 </body>
 </html>

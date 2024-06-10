@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>와이파이 정보 구하기</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: left;
+            color: black;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #aaa;
+        }
+        th {
+            background-color: #3cb371;
+            color: white;
+            text-align: center;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(odd) {
+            background-color: #fff;
+        }
+         .button-link:hover {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h1>위치 히스토리 목록</h1>
+<div>
+    <a href="index.html">홈</a><span class="separator">|</span>
+    <a href="bookmarksList.html">위치 히스토리 목록</a><span class="separator">|</span>
+    <a href="#">Open API 와이파이 정보 가져오기</a><span class="separator">|</span>
+    <a href="history.html">즐겨 찾기 보기</a><span class="separator">|</span>
+    <a href="history.html">즐겨 찾기 그룹 관리</a>
+</div>
+<table>
+    <tr>
+        <th>북마크 이름</th>
+        <td><input type="text" id="bookmarkName" placeholder=""></td>
+    </tr>
+    <tr>
+        <th>순서</th>
+        <td><input type="number" id="order" placeholder=""></td>
+    </tr>
+    <tr>
+        <td colspan="2" style="text-align: center;">
+            <a href="history.html">돌아가기</a><span class="separator">|</span>
+            <button onclick="deleteBookmark()">삭제</button>
+        </td>
+    </tr>
+</table>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookmarkId = urlParams.get('id');
+
+        if (bookmarkId) {
+            let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+            let bookmark = bookmarks.find(b => b.id === bookmarkId);
+
+            if (bookmark) {
+                document.getElementById('bookmarkName').value = bookmark.name;
+                document.getElementById('order').value = bookmark.order;
+            }
+        }
+    });
+
+    function deleteBookmark() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookmarkId = urlParams.get('id');
+
+        {
+            let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+            bookmarks = bookmarks.filter(b => b.id !== bookmarkId);
+            localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+            alert("북마크 그룹정보를 삭제하였습니다.");
+            window.location.href = "history.html";
+        }
+    }
+</script>
+
+</body>
+</html>

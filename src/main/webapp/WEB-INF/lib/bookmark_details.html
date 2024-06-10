@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>북마크 목록</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: left;
+            color: black;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #aaa;
+        }
+        th {
+            background-color: #3cb371;
+            color: white;
+            text-align: center;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(odd) {
+            background-color: #fff;
+        }
+        .button-link {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+            background: none;
+            border: none;
+            padding: 0;
+            font: inherit;
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+
+<h1>북마크 목록</h1>
+
+<div>
+    <a href="index.html">홈</a><span class="separator">|</span>
+    <a href="details.html">와이파이 정보 구하기</a><span class="separator">|</span>
+    <a href="history.html">위치 히스토리 목록</a><span class="separator">|</span>
+    <a href="bookmark_details.html">북마크 상세 정보</a>
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>북마크 이름</th>
+        <th>와이파이명</th>
+        <th>등록일자</th>
+        <th>비고</th>
+    </tr>
+    </thead>
+    <tbody id="bookmarkList">
+    <!-- 북마크 목록이 여기에 추가됩니다 -->
+    </tbody>
+</table>
+
+<script>
+    document.addEventListener('DOMContentLoaded', loadBookmarks);
+
+    function loadBookmarks() {
+        let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+        bookmarks.forEach(displayBookmark);
+    }
+
+    function displayBookmark(bookmark) {
+        const tableBody = document.getElementById('bookmarkList');
+        const newRow = document.createElement('tr');
+
+        const idCell = document.createElement('td');
+        idCell.textContent = bookmark.id;
+        newRow.appendChild(idCell);
+
+        const nameCell = document.createElement('td');
+        nameCell.textContent = bookmark.name;
+        newRow.appendChild(nameCell);
+
+        const wifiNameCell = document.createElement('td');
+        wifiNameCell.innerHTML = `<a href="details.html?mgrNo=${bookmark.id}">${bookmark.wifiName}</a>`;
+        newRow.appendChild(wifiNameCell);
+
+        const dateCell = document.createElement('td');
+        dateCell.textContent = bookmark.createDate || 'N/A';
+        newRow.appendChild(dateCell);
+
+        const actionCell = document.createElement('td');
+        actionCell.innerHTML = `<button class="button-link" onclick="deleteBookmark('${bookmark.id}')">삭제</button>`;
+        newRow.appendChild(actionCell);
+
+        tableBody.appendChild(newRow);
+    }
+
+    function deleteBookmark(bookmarkId) {
+        let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+        bookmarks = bookmarks.filter(b => b.id !== bookmarkId);
+        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+        window.location.reload();
+    }
+</script>
+
+</body>
+</html>

@@ -4,8 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f6bb9bf-6f9a-4c37-bc71-000006fdefb7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Servlet/WifiInfoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Servlet/WifiInfoServlet.java" afterDir="false" />
+    <list default="true" id="5f6bb9bf-6f9a-4c37-bc71-000006fdefb7" name="Changes" comment="Save changes before pulling">
+      <changelist_data name="이희경" email="leeheekyung@ihuigyeongs-macbook-pro.local" />
+      <change afterPath="$PROJECT_DIR$/apache-tomcat-8.5.100/webapps/wifi-service-1.0-SNAPSHOT.war" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/WifiService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/bookmark_details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/bookmarks.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/bookmarksList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/history.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/modify.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.100/conf/catalina.policy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.100/conf/catalina.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.100/conf/context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.100/conf/jaspic-providers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.100/conf/jaspic-providers.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.100/conf/logging.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.100/conf/server.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.100/conf/tomcat-users.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.100/conf/tomcat-users.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache-tomcat-8.5.100/conf/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/sqlite-jdbc-3.45.3.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydatabase.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/db/mydatabase.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DatabaseConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/util/DatabaseConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ApiRequestUtil/WifiInfoFetcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/WifiInfoFetcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ApiRequestUtil/WifiNearbyFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/WifiNearbyFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ApiRequestUtil/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/script/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Servlet/WifiInfoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/WifiServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Servlet/wifi_info.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wifi_info.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/WifiInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/WifiInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/WifiInfoManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/WifiInfoManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,13 +56,29 @@
         <option value="AnnotationType" />
         <option value="package-info" />
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;heekuukuu&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/heekuukuu/heekuuproject.git&quot;,
+    &quot;accountId&quot;: &quot;3e5e08ac-42e8-4969-91be-409b8e9da495&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/example/controller/WifiServlet.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$USER_HOME$/Library/Java/JavaVirtualMachines/liberica-1.8.0_412/src.zip!/com/sun/org/apache/xerces/internal/jaxp/DocumentBuilderImpl.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -36,6 +90,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -45,45 +102,55 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ApiRequestUtil (1).executor&quot;: &quot;Run&quot;,
-    &quot;Application.ApiRequestUtil.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.WifiInfoFetcher.executor&quot;: &quot;Run&quot;,
-    &quot;Application.WifiNearbyFinder.executor&quot;: &quot;Run&quot;,
-    &quot;Application.org.example.ApiRequestUtil.WifiInfoFetcher.executor&quot;: &quot;Run&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Smart Tomcat.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.33448276&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ApiRequestUtil (1).executor": "Run",
+    "Application.ApiRequestUtil.executor": "Run",
+    "Application.Main.executor": "Debug",
+    "Application.WifiInfoFetcher.executor": "Run",
+    "Application.WifiNearbyFinder.executor": "Run",
+    "Application.org.example.ApiRequestUtil.WifiInfoFetcher.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Notification.DisplayName-DoNotAsk-Execution": "External process execution failed",
+    "Notification.DoNotAsk-Execution": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Smart Tomcat.Tomcat.executor": "Run",
+    "Smart Tomcat.Tomcat: heekuuproject.executor": "Run",
+    "Smart Tomcat.Unnamed.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/leeheekyung/Downloads/Javaproject/heekuuproject/src/main/webapp/WEB-INF/lib",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.33448276",
+    "settings.editor.selected.configurable": "project.propCompiler"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ApiRequestUtil.servlet" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib" />
-      <recent name="$PROJECT_DIR$/src/main" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/main/java/org/example/ApiRequestUtil" />
+      <recent name="$PROJECT_DIR$/apache-tomcat-8.5.100/webapps" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/java/org/example" />
+      <recent name="$PROJECT_DIR$/src/WebContent" />
+      <recent name="$PROJECT_DIR$/src/main/java/org/example/script" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/db" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="org.example.Servlet" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WifiNearbyFinder">
+  <component name="RunManager" selected="Smart Tomcat.Tomcat: heekuuproject">
     <configuration name="ApiRequestUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.ApiRequestUtil.ApiRequestUtil" />
       <module name="heekuuproject" />
@@ -91,28 +158,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
-      <module name="heekuuproject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WifiInfoFetcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="WifiInfoFetcher" />
-      <module name="heekuuproject" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="WifiNearbyFinder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="WifiNearbyFinder" />
+      <option name="MAIN_CLASS_NAME" value="org.example.service.WifiNearbyFinder" />
       <module name="heekuuproject" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -123,7 +170,7 @@
       <module name="heekuuproject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.ApiRequestUtil.*" />
+          <option name="PATTERN" value="org.example.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -131,7 +178,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Unnamed" type="com.poratu.idea.plugins.tomcat" nameIsGenerated="true">
+    <configuration default="true" type="TestNG">
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat: heekuuproject" type="com.poratu.idea.plugins.tomcat" temporary="true">
       <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
       <predefined_log_file enabled="true" id="Tomcat Access Log" />
       <predefined_log_file id="Tomcat Catalina Log" />
@@ -149,35 +216,48 @@
         </TomcatInfo>
       </option>
       <option name="vmOptions" value="" />
-      <module name="heekuuproject" />
+      <module name="wifi-service" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="com.poratu.idea.plugins.tomcat">
+      <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
+      <predefined_log_file enabled="true" id="Tomcat Access Log" />
+      <predefined_log_file id="Tomcat Catalina Log" />
+      <predefined_log_file id="Tomcat Manager Log" />
+      <predefined_log_file id="Tomcat Host Manager Log" />
+      <option name="catalinaBase" value="$USER_HOME$/.SmartTomcat/heekuuproject/heekuuproject" />
+      <option name="contextPath" value="" />
+      <option name="docBase" value="$PROJECT_DIR$/apache-tomcat-8.5.100" />
+      <option name="extraClassPath" value="" />
+      <option name="tomcatInfo">
+        <TomcatInfo>
+          <option name="name" value="Apache Tomcat/8.5.100" />
+          <option name="path" value="$PROJECT_DIR$/src/apache-tomcat-8.5.100" />
+          <option name="version" value="8.5.100.0" />
+        </TomcatInfo>
+      </option>
+      <option name="vmOptions" value="" />
+      <module name="wifi-service" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.WifiInfoFetcher" />
-      <item itemvalue="Application.org.example.ApiRequestUtil.WifiInfoFetcher" />
       <item itemvalue="Application.ApiRequestUtil" />
-      <item itemvalue="Application.Main" />
       <item itemvalue="Application.WifiNearbyFinder" />
-      <item itemvalue="Smart Tomcat.Unnamed" />
+      <item itemvalue="Application.org.example.ApiRequestUtil.WifiInfoFetcher" />
+      <item itemvalue="Smart Tomcat.Tomcat" />
+      <item itemvalue="Smart Tomcat.Tomcat: heekuuproject" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Smart Tomcat.Tomcat: heekuuproject" />
         <item itemvalue="Application.WifiNearbyFinder" />
-        <item itemvalue="Application.org.example.ApiRequestUtil.WifiInfoFetcher" />
-        <item itemvalue="Application.WifiInfoFetcher" />
         <item itemvalue="Application.ApiRequestUtil" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-1.8.0_392-liberica-1.8.0_392-249ae16d76d6-44223650" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -189,6 +269,10 @@
       <updated>1716544025074</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.configurationType" implementationName="com.poratu.idea.plugins.tomcat" />
+    <option featureType="dependencySupport" implementationName="maven-packaging:war" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -207,6 +291,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Save changes before pulling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Save changes before pulling" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -215,14 +303,24 @@
           <option name="timeStamp" value="4" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/ApiRequestUtil/WifiNearbyFinder.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/service/WifiNearbyFinder.java</url>
           <line>10</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/ApiRequestUtil/WifiNearbyFinder.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/service/WifiNearbyFinder.java</url>
           <line>22</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/service/WifiNearbyFinder.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/util/DatabaseConnector.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

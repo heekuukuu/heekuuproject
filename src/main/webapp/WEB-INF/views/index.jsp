@@ -1,28 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="com.google.gson.JsonObject" %>
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>API Data</title>
+    <title>WiFi Service</title>
 </head>
 <body>
-    <h1>API Data</h1>
-    <%
-        // 서블릿에서 전달된 데이터 가져오기
-        JsonObject jsonData = (JsonObject) request.getAttribute("apiData");
-        if (jsonData != null) {
-            String name = jsonData.get("NAME").getAsString();
-            String type = jsonData.get("TYPE").getAsString();
-    %>
-            <p>Name: <%= name %></p>
-            <p>Type: <%= type %></p>
-    <%
-        } else {
-    %>
-            <p>No data available.</p>
-    <%
-        }
-    %>
+    <h1>WiFi Information Service</h1>
+    <form action="wifi" method="get">
+        <label for="location">Enter your location:</label>
+        <input type="text" id="location" name="location">
+        <input type="submit" value="Search">
+    </form>
 </body>
 </html>
